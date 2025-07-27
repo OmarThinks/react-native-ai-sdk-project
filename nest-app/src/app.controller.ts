@@ -3,11 +3,6 @@ import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 import { AppService } from './app.service';
 
-console.log(
-  'Using Google Generative AI with API Key:',
-  process.env.GOOGLE_API_KEY,
-);
-
 const google = createGoogleGenerativeAI({
   apiKey: process.env.GOOGLE_API_KEY,
 });

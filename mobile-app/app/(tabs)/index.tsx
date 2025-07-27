@@ -1,9 +1,8 @@
-import { generateAPIUrl } from "@/utils/generateAPIUrl";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { fetch as expoFetch } from "expo/fetch";
 import { useState } from "react";
-import { View, TextInput, ScrollView, Text, SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 
 export default function App() {
   const [input, setInput] = useState("");
