@@ -1,15 +1,17 @@
+import { generateAPIUrl } from "@/utils/generateAPIUrl";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { fetch as expoFetch } from "expo/fetch";
 import { useState } from "react";
-import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
+import { View, TextInput, ScrollView, Text, SafeAreaView } from "react-native";
 
 export default function App() {
   const [input, setInput] = useState("");
   const { messages, error, sendMessage } = useChat({
     transport: new DefaultChatTransport({
       fetch: expoFetch as unknown as typeof globalThis.fetch,
-      api: "http://127.0.0.1:3000/api/chat",
+      api: generateAPIUrl("/api/chat"),
+      //api: "http://127.0.0.1:3000/api/chat",
     }),
     onError: (error) => console.error(error, "ERROR"),
   });
