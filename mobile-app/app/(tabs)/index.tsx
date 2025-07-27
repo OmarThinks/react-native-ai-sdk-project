@@ -10,8 +10,8 @@ export default function App() {
   const { messages, error, sendMessage } = useChat({
     transport: new DefaultChatTransport({
       fetch: expoFetch as unknown as typeof globalThis.fetch,
-      api: generateAPIUrl("/api/chat"),
-      //api: "http://127.0.0.1:3000/api/chat",
+      //api: generateAPIUrl("/api/chat"),
+      api: "http://192.168.8.103:3000/api/chat",
     }),
     onError: (error) => console.error(error, "ERROR"),
   });

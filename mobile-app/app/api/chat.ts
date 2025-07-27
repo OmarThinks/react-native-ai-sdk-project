@@ -17,6 +17,7 @@ async function POST(req: Request) {
     model: google("models/gemini-2.0-flash-exp"),
     messages: convertToModelMessages(messages),
     system: "You are a friend.",
+    experimental_telemetry: { isEnabled: false },
   });
 
   return result.toUIMessageStreamResponse({
@@ -28,3 +29,4 @@ async function POST(req: Request) {
 }
 
 export { POST };
+export default POST;

@@ -16,15 +16,22 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('/api/chat')
-  example(@Res() res: Response, @Body() messages: UIMessage[]) {
+  @Post('api/chat')
+  example(
+    @Res() res: Response,
+    @Body() { messages }: { messages: UIMessage[] },
+  ) {
+    console.log(messages, 'MESSAGES');
+
     const result = streamText({
-      model: google('gpt-4o'),
+      model: google('models/gemini-2.0-flash-exp'),
       messages: convertToModelMessages(messages),
       system: 'You are a friend.',
+      experimental_telemetry: { isEnabled: false },
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    result.pipeTextStreamToResponse(res as unknown as any);
+    return result.pipeUIMessageStreamToResponse(res as unknown as any);
+    //return result.pipeUIMessageStreamToResponse(res as unknown as any);
   }
 }
