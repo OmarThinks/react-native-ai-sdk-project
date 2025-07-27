@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Post()
+  async example(@Res() res: Response) {
+    const result = streamText({
+      model: openai('gpt-4o'),
+      prompt: 'Invent a new holiday and describe its traditions.',
+    });
+
+    result.pipeDataStreamToResponse(res);
+  }
 }
