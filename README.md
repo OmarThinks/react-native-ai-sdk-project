@@ -16,7 +16,7 @@ It uses the following technologies:
 ## B) How to run Backend:
 
 - Generate an api key from google
-- Enable the API to access the
+- Enable the API to access the Google Genrative AI
 - In `/nest-app` create a file called `.env`
 - In this file, write the following:
 

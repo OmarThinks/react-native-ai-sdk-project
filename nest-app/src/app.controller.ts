@@ -22,7 +22,7 @@ export class AppController {
     const result = streamText({
       model: google('models/gemini-2.0-flash-exp'),
       messages: convertToModelMessages(messages),
-      system: 'You are a friend.',
+      system: "I'm a a doctor AI assistant.",
       experimental_telemetry: { isEnabled: false },
       onFinish: ({ usage }) => {
         console.log('Usage:', usage);
