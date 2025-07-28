@@ -1,5 +1,7 @@
 # React Native AI SDK Project:
 
+YouTube: https://www.youtube.com/watch?v=aWCbzjMcmLs
+
 ## A) About:
 
 <img src="./media/Screenshot_1.png" width=300/>
