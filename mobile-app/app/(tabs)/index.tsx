@@ -6,6 +6,7 @@ import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 
 export default function App() {
   const [input, setInput] = useState("");
+
   const { messages, error, sendMessage } = useChat({
     transport: new DefaultChatTransport({
       fetch: expoFetch as unknown as typeof globalThis.fetch,

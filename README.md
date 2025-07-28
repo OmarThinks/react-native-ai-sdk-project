@@ -20,7 +20,7 @@ It uses the following technologies:
 - In `/nest-app` create a file called `.env`
 - In this file, write the following:
 
-```
+```bash
 GOOGLE_GENERATIVE_AI_API_KEY=""
 ```
 
