@@ -2,6 +2,8 @@
 
 ## A) About:
 
+<img src="./media/Screenshot_1.png" width=300/>
+
 A mobile app with nest backend to
 
 It uses the following technologies:

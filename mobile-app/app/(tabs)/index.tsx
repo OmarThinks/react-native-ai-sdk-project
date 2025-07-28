@@ -30,11 +30,20 @@ export default function App() {
           {messages.map((m) => (
             <View key={m.id} style={{ marginVertical: 8 }}>
               <View>
-                <Text style={{ fontWeight: 700 }}>{m.role}</Text>
+                <Text style={{ fontWeight: 700, fontSize: 32, color: "black" }}>
+                  {m.role}
+                </Text>
                 {m.parts.map((part, i) => {
                   switch (part.type) {
                     case "text":
-                      return <Text key={`${m.id}-${i}`}>{part.text}</Text>;
+                      return (
+                        <Text
+                          key={`${m.id}-${i}`}
+                          style={{ fontSize: 36, color: "#111" }}
+                        >
+                          {part.text}
+                        </Text>
+                      );
                   }
                 })}
               </View>
@@ -44,7 +53,7 @@ export default function App() {
 
         <View style={{ marginTop: 8 }}>
           <TextInput
-            style={{ backgroundColor: "white", padding: 8 }}
+            style={{ backgroundColor: "white", padding: 8, fontSize: 24 }}
             placeholder="Say something..."
             value={input}
             onChange={(e) => setInput(e.nativeEvent.text)}
