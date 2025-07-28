@@ -28,6 +28,9 @@ export class AppController {
       messages: convertToModelMessages(messages),
       system: 'You are a friend.',
       experimental_telemetry: { isEnabled: false },
+      onFinish: ({ usage }) => {
+        console.log('Usage:', usage);
+      },
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
