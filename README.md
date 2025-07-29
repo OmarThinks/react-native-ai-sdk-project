@@ -1,6 +1,6 @@
 # React Native AI SDK Project:
 
-YouTube: https://www.youtube.com/watch?v=aWCbzjMcmLs
+YouTube: https://www.youtube.com/watch?v=mzfuoUZ3TE0
 
 ## A) About:
 
